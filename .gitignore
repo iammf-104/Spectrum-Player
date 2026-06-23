@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+*.spec
+
+# PyInstaller build output
+build/
+dist/
+
+# User data (personal music & playlists — do not upload)
+music_library/
+playlists.json
+playlists.bak
+playlists.tmp
+player_errors.log
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+
+# Backups
+v2_backup/

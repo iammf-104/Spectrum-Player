@@ -1,0 +1,7 @@
+sounddevice
+soundfile
+numpy
+scipy
+mutagen
+windnd
+# tkinter is in stdlib
