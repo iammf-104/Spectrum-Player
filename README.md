@@ -207,3 +207,64 @@ A：编辑 `run.bat` 或 `build_exe.bat` 中的 `CONDA_PYTHON` / `PYTHON` 变量
 - **操作系统**：Windows 10 / 11
 - **开发运行**：Python 3.10+，见 `requirements.txt`
 - **exe 运行**：无需 Python，Windows 10/11 即可
+
+---
+
+## 八、上传到 GitHub（首次使用）
+
+本地代码已准备好 Git 仓库。按以下步骤上传到你的 GitHub 账号：
+
+### 第 1 步：在 GitHub 网站创建空仓库
+
+1. 登录 [https://github.com](https://github.com)
+2. 点击右上角 **+** → **New repository**
+3. 填写：
+   - **Repository name**：例如 `midlow-spectrum-player`
+   - **Public** 或 **Private** 任选
+   - **不要**勾选 "Add a README file"（本地已有）
+4. 点击 **Create repository**
+
+### 第 2 步：关联远程仓库并推送
+
+创建完成后，GitHub 会显示仓库地址。在命令行执行（把 `你的用户名` 和 `仓库名` 换成你的）：
+
+```bat
+cd "D:\python project\project\midlow_spectrum_player"
+
+git remote add origin https://github.com/你的用户名/仓库名.git
+
+git push -u origin main
+```
+
+### 第 3 步：登录验证
+
+首次推送时，Windows 可能弹出浏览器让你登录 GitHub，或要求输入：
+
+- **用户名**：你的 GitHub 用户名
+- **密码**：不是登录密码，而是 **Personal Access Token（PAT）**
+
+生成 Token 的方法：
+
+1. GitHub → 右上角头像 → **Settings**
+2. 左侧最下方 **Developer settings** → **Personal access tokens** → **Tokens (classic)**
+3. **Generate new token**，勾选 `repo` 权限
+4. 复制生成的 token，粘贴到密码框
+
+### 已上传的内容
+
+| 会上传 | 不会上传（已在 .gitignore 中排除） |
+|--------|-----------------------------------|
+| 源代码、README、run.bat、build_exe.bat | `music_library/`（你的私人音乐） |
+| requirements.txt | `playlists.json`（你的歌单数据） |
+| | `dist/`、`build/`（打包产物） |
+
+### 以后更新代码
+
+修改代码后，执行：
+
+```bat
+cd "D:\python project\project\midlow_spectrum_player"
+git add .
+git commit -m "描述你改了什么"
+git push
+```
