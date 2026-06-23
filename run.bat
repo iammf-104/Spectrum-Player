@@ -1,5 +1,4 @@
 @echo off
-chcp 65001 >nul
 cd /d "%~dp0"
 
 set "PYTHON="
@@ -17,7 +16,7 @@ if not defined PYTHON (
 )
 
 if not defined PYTHON (
-    echo [错误] 未找到 Python。请先安装 Python 并运行 setup.bat。
+    echo [ERROR] Python not found. Install Python and run setup.bat first.
     pause
     exit /b 1
 )

@@ -1,9 +1,8 @@
 @echo off
-chcp 65001 >nul
 cd /d "%~dp0"
 
 echo ============================================
-echo  安装播放器依赖
+echo  Install dependencies
 echo ============================================
 echo.
 
@@ -22,31 +21,28 @@ if not defined PYTHON (
 )
 
 if not defined PYTHON (
-    echo [错误] 未找到 Python。
-    echo.
-    echo 请先安装 Python 3.10+： https://www.python.org/downloads/
-    echo 安装时勾选 "Add Python to PATH"。
+    echo [ERROR] Python not found.
+    echo Install Python 3.10+ from https://www.python.org/downloads/
+    echo Check "Add Python to PATH" during install.
     echo.
     pause
     exit /b 1
 )
 
-echo 使用 Python: %PYTHON%
+echo Using Python: %PYTHON%
 "%PYTHON%" --version
 echo.
-echo 正在安装依赖，请稍候...
+echo Installing packages from requirements.txt...
 "%PYTHON%" -m pip install -r requirements.txt
 
 if errorlevel 1 (
     echo.
-    echo [错误] 安装失败，请检查网络或 Python 安装。
+    echo [ERROR] Install failed. Check network or Python install.
     pause
     exit /b 1
 )
 
 echo.
-echo 依赖安装完成！现在可以：
-echo   - 双击 run.bat       运行播放器
-echo   - 双击 build_exe.bat 打包 exe
+echo Done. You can now run run.bat or build_exe.bat
 echo.
 pause
