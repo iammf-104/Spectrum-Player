@@ -16,7 +16,7 @@ if errorlevel 1 (
 )
 
 echo Using Python: %PYTHON%
-echo To use another environment, run select_python.bat
+echo To change environment, run setup.bat
 echo.
 "%PYTHON%" --version
 if errorlevel 1 (
