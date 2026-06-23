@@ -231,7 +231,7 @@ A：编辑 `run.bat` 或 `build_exe.bat` 中的 `CONDA_PYTHON` / `PYTHON` 变量
 ```bat
 cd "D:\python project\project\midlow_spectrum_player"
 
-git remote add origin https://github.com/你的用户名/仓库名.git
+git remote add origin https://github.com/iammf-104/Spectrum-Player.git
 
 git push -u origin main
 ```
@@ -243,12 +243,19 @@ git push -u origin main
 - **用户名**：你的 GitHub 用户名
 - **密码**：不是登录密码，而是 **Personal Access Token（PAT）**
 
-生成 Token 的方法：
+生成 Token 的方法（找不到 Developer settings 时用直接链接）：
 
-1. GitHub → 右上角头像 → **Settings**
-2. 左侧最下方 **Developer settings** → **Personal access tokens** → **Tokens (classic)**
-3. **Generate new token**，勾选 `repo` 权限
-4. 复制生成的 token，粘贴到密码框
+**直接打开：** [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
+
+或手动找：
+
+1. GitHub 右上角头像 → **Settings**
+2. 左侧菜单**滑到最底部** → **Developer settings**（在 Emails 等选项下面）
+3. **Personal access tokens** → **Tokens (classic)** → **Generate new token**
+4. 勾选 **repo** 权限，生成后复制 token
+5. 推送时：**用户名**填 `iammf-104`，**密码**粘贴 token（不是登录密码）
+
+**更简单的方式：** 双击项目里的 **`push_to_github.bat`**，按提示操作即可。
 
 ### 已上传的内容
 
