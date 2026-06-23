@@ -26,3 +26,6 @@ Desktop.ini
 
 # Backups
 v2_backup/
+
+# Local Python path (machine-specific)
+.python_path

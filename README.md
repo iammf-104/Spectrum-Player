@@ -14,6 +14,9 @@ midlow_spectrum_player/
 ├── window_chrome.py      # 窗口主题与 DPI 适配
 ├── requirements.txt      # Python 依赖列表
 ├── run.bat               # 一键运行（开发环境）
+├── setup.bat             # 安装依赖
+├── select_python.bat     # 选择 Python 环境（多环境时）
+├── get_python.bat        # 内部：解析当前 Python 路径
 ├── build_exe.bat         # 一键打包 exe
 ├── build_exe.py          # 打包脚本（Python 版）
 ├── playlists.json        # 歌单数据（运行后自动生成）
@@ -38,8 +41,16 @@ midlow_spectrum_player/
    双击 build_exe.bat      ← 打包成 exe
 ```
 
-> **注意：** 旧版 `build_exe.bat` 写死了本机 Python 路径，在其他电脑会“没反应”。  
-> 请使用最新版代码（已改为自动查找 Python）。
+### 默认用哪个 Python？
+
+| 情况 | 使用的环境 |
+|------|------------|
+| 未手动选择 | **`py -3`**（Windows Python 启动器的默认 3.x），找不到则用 PATH 里的 **`python`** |
+| 运行过 `select_python.bat` | 保存在 **`.python_path`** 里的路径（仅本机，不上传 GitHub） |
+
+电脑上有 **Anaconda / 多个 Python** 时，先双击 **`select_python.bat`**，按编号选择，之后 `run.bat`、`setup.bat`、`build_exe.bat` 都会用同一个环境。
+
+选 **0** 可恢复为自动检测。
 
 ### 方式 1：双击 `run.bat`（推荐）
 
