@@ -26,16 +26,29 @@ midlow_spectrum_player/
 
 ---
 
-## 一、开发环境运行
+## 一、从 GitHub 下载后首次使用
+
+从 GitHub 下载代码后，请按顺序操作：
+
+```
+1. 安装 Python 3.10+（https://www.python.org/downloads/，勾选 Add Python to PATH）
+2. 双击 setup.bat          ← 安装依赖（首次必做）
+3. 双击 run.bat            ← 运行播放器
+   或
+   双击 build_exe.bat      ← 打包成 exe
+```
+
+> **注意：** 旧版 `build_exe.bat` 写死了本机 Python 路径，在其他电脑会“没反应”。  
+> 请使用最新版代码（已改为自动查找 Python）。
 
 ### 方式 1：双击 `run.bat`（推荐）
 
 1. 进入 `midlow_spectrum_player` 文件夹
-2. 双击 **`run.bat`**
-3. 播放器窗口会自动打开
+2. 先运行 **`setup.bat`**（首次必做，安装依赖）
+3. 双击 **`run.bat`**
+4. 播放器窗口会自动打开
 
-> `run.bat` 默认使用 `D:\python project\.conda\python.exe`。  
-> 若你的 Python 路径不同，用记事本打开 `run.bat`，修改 `CONDA_PYTHON=` 那一行为你的 Python 路径。
+> 若 Python 未加入 PATH，请先安装 Python 并勾选 “Add Python to PATH”，或运行 `setup.bat` 检查环境。
 
 ### 方式 2：命令行运行
 
@@ -119,17 +132,13 @@ pip install -r requirements.txt
 ### 使用 `build_exe.bat`（推荐）
 
 1. 进入 `midlow_spectrum_player` 文件夹
-2. 双击 **`build_exe.bat`**
-3. 等待 1–3 分钟，出现「打包完成！」即可
+2. 首次请先运行 **`setup.bat`**
+3. 双击 **`build_exe.bat`**
+4. 等待 1–3 分钟，出现「打包完成！」即可
 
-脚本会自动完成：
+脚本会自动：查找本机 Python → 安装依赖（如缺失）→ 安装 PyInstaller → 打包
 
-- 安装 / 升级 PyInstaller
-- 清理旧的 `build/`、`dist/`
-- 打包最新代码
-- 在 `dist\MidLowSpectrumPlayer\` 生成可执行文件
-
-> 若 Python 路径不是 `D:\python project\.conda\python.exe`，请用记事本打开 `build_exe.bat`，修改 `set PYTHON=` 那一行。
+> 若双击后窗口一闪而过，说明未安装 Python。请先安装 Python 并运行 `setup.bat`。
 
 ### 使用 Python 脚本打包
 
